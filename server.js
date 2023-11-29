@@ -9,7 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const sess = {
-  secret: 'Super secret secret',
+  secret: process.env.SESSION_SECRET || 'Super secret secret',
   cookie: {},
   resave: false,
   saveUninitialized: true,
@@ -25,6 +25,10 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(routes);
 
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
-});
+sequelize.sync({ force: false })
+  .then(() => {
+    app.listen(PORT, () => console.log(`Server is now listening on port ${PORT}`));
+  })
+  .catch((err) => {
+    console.error('Error syncing database:', err);
+  });

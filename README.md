@@ -2,17 +2,15 @@
 
 ## Description
 
-As a developer who writes about tech I wanted a CMS-style blog site so that I can publish articles, blog posts, and my thoughts and opinions. Becuase writing about tech can be just as important as making it. This application is similar to a Wordpress site as developers can publish their blog posts and comment on other developers' posts as well. This helps developers stay up to date on tech! This app is deployed using Heroku and follows the MVC paradigm it its arcitechtural structure using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication. 
-
-- What did you learn?
+As a developer who writes about tech I wanted a CMS-style blog site so that I can publish articles, blog posts, and my thoughts and opinions. Becuase writing about tech can be just as important as making it. This application is similar to a Wordpress site as developers can publish their blog posts and comment on other developers' posts as well. This helps developers stay up to date on tech! This app is deployed using Heroku and follows the MVC paradigm it its arcitechtural structure using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication. I learned how to utilize the MVC software design pattern to manipulate and update data. 
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+To use this application, click [here]()for the deployed link on Heroku. 
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+Access the depoloyed application on Heroku using the link provided.
 
 To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
 

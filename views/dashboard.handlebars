@@ -1,0 +1,28 @@
+{{#if logged_in}}
+<section class="user-dashboard">
+    <h2>Your Dashboard, {{User.username}}!</h2>
+
+    {{#if posts.length}}
+    {{#each posts}}
+    <article class="dashboard-post">
+        <h3>{{title}}</h3>
+        <p class="post-meta">Posted on {{format_date createdAt}}</p>
+        <p>{{{content}}}</p>
+        <div class="dashboard-buttons">
+        <a href="/editpost/{{id}}">Edit</a>
+            <form action="/api/posts/{{id}}" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit">Delete</button>
+            </form>
+        </div>
+        </article>
+    {{/each}}
+    {{else}}
+    <p>You haven't created any posts yet.</p>
+    {{/if}}
+
+    <a href="/newpost">Create a New Post</a>
+</section>
+{{else}}
+    <p>You must be logged in to view your dashboard.</p>
+{{/if}}

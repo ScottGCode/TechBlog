@@ -2,11 +2,8 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
+As a developer who writes about tech I wanted a CMS-style blog site so that I can publish articles, blog posts, and my thoughts and opinions. Becuase writing about tech can be just as important as making it. This application is similar to a Wordpress site as developers can publish their blog posts and comment on other developers' posts as well. This helps developers stay up to date on tech! This app is deployed using Heroku and follows the MVC paradigm it its arcitechtural structure using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication. 
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
 - What did you learn?
 
 ## Installation
@@ -23,11 +20,7 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
+University of Utah Coding Bootcamp Instructor and Teaching Assistants. NPM documentation on MySQL2 and Sequelize. Express-session, connect-session-sequelize and expresss-handlebar documentation. MDN Web Docs. W3 Schools. FullStack Blog. Stack Overflow.
 
 ## License
 

@@ -1,5 +1,5 @@
 module.exports = {
-    // Format date and time information to MM/DD/YYYY HH:mm
+// Format date and time information to MM/DD/YYYY HH:mm
     format_date: (date) => {
 // Define format strings
     const dateFormat = 'MM/DD/YYYY';

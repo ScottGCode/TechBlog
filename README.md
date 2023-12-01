@@ -6,15 +6,13 @@ As a developer who writes about tech I wanted a CMS-style blog site so that I ca
 
 ## Installation
 
-To use this application, click [here]()for the deployed link on Heroku. 
+To use this application, follow the link to the deployed application:
+
+-  [Deployed Application Link](https://nameless-meadow-42320-01f69d306749.herokuapp.com/)
 
 ## Usage
 
-Access the depoloyed application on Heroku using the link provided.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
-
-![alt text](assets/images/screenshot.png)
+Access the depoloyed application on Heroku using the link provided. Users are able to login, sign-up, log-out, post, comment, delete, and edit comments on the tech blog. 
 
 ## Credits
 

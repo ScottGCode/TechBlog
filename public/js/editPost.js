@@ -27,19 +27,19 @@ const post_id = window.location.toString().split("/")[
   };
   
   // Delete the post
-  const deletePostFormHandler = async (event) => {
-    event.preventDefault();
+  // const deletePostFormHandler = async (event) => {
+  //   event.preventDefault();
   
-    const response = await fetch(`/api/posts/${post_id}`, {
-      method: "DELETE",
-    });
+  //   const response = await fetch(`/api/posts/${post_id}`, {
+  //     method: "DELETE",
+  //   });
   
-    if (response.ok) {
-      document.location.replace("/dashboard"); // When successful, load the dashboard page
-    } else {
-      alert("Failed to delete a post."); // When unsuccessful, show alert
-    }
-  };
+  //   if (response.ok) {
+  //     document.location.replace("/dashboard"); // When successful, load the dashboard page
+  //   } else {
+  //     alert("Failed to delete a post."); // When unsuccessful, show alert
+  //   }
+  // };
   
   // Event listeners
   const updatePostButton = document.querySelector("#update-post");

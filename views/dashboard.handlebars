@@ -1,6 +1,6 @@
 {{#if logged_in}}
 <section class="user-dashboard">
-    <h2>Your Dashboard, {{User.username}}!</h2>
+    <h2>Your Dashboard {{User.username}}!</h2>
 
     {{#if posts.length}}
     {{#each posts}}
@@ -21,7 +21,7 @@
     <p>You haven't created any posts yet.</p>
     {{/if}}
 
-    <a href="/views/new-post.handlebars">Create a New Post</a>
+    <a href="/newpost">Create a New Post</a>
 </section>
 {{else}}
     <p>You must be logged in to view your dashboard.</p>

@@ -15,7 +15,7 @@
         {{/each}}
 
         {{#if logged_in}}
-        <form action="/controllers/api/comment-routes.js" method="POST" class="new-comment-form">
+        <form action="/newComment" method="POST" class="new-comment-form">
             <label for="comment_text">Add a Comment:</label>
             <textarea id="comment_text" name="comment_text" required></textarea>
             <button type="submit">Submit Comment</button>

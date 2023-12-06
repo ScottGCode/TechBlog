@@ -1,36 +1,50 @@
+const path = require('path');
 const express = require('express');
 const session = require('express-session');
+const exphbs = require('express-handlebars');
 const routes = require('./controllers');
-const path = require('path');
-require('dotenv').config(); 
+const helpers = require('./utils/helpers');
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
-const PORT = process.env.PORT || 3306;
+const PORT = process.env.PORT || 3001;
+
+// Set up Handlebars.js engine with custom helpers and layouts folder
+const hbs = exphbs.create({
+  helpers,
+  layoutsDir: path.join(__dirname, 'views/layouts'), // Specify the correct layouts folder
+});
 
 const sess = {
-  secret: process.env.SESSION_SECRET || 'Super secret secret',
-  cookie: {},
+  secret: 'Super secret secret',
+  cookie: {
+    maxAge: 300000,
+    httpOnly: true,
+    secure: false,
+    sameSite: 'strict',
+  },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
-    db: sequelize
-  })
+    db: sequelize,
+  }),
 };
 
 app.use(session(sess));
-app.use(express.static(path.join(__dirname, 'public')));
+
+// Inform Express.js on which template engine to use
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+app.set('views', path.join(__dirname, 'views')); // Specify the correct views folder
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-sequelize.sync({ force: false })
-  .then(() => {
-    app.listen(PORT, () => console.log(`Server is now listening on port ${PORT}`));
-  })
-  .catch((err) => {
-    console.error('Error syncing database:', err);
-  });
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log('Server now listening'));
+});

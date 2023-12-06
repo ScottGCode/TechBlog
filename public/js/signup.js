@@ -1,4 +1,3 @@
-// Signup request
 const signUp = async (event) => {
     event.preventDefault();
 

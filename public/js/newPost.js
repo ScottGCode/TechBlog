@@ -1,4 +1,3 @@
-// Create new post public/js/new-post.js
 const newPost = async (event) => {
   event.preventDefault();
 

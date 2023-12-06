@@ -1,4 +1,3 @@
-// Handler function for login form submission
 const login = async (event) => {
     event.preventDefault();
     // Get the values of the username and password input fields

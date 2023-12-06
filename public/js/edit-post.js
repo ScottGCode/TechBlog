@@ -1,4 +1,3 @@
-// Get the post ID from the endpoint
 const post_id = window.location.toString().split("/")[
     window.location.toString().split("/").length - 1
   ];
@@ -53,4 +52,4 @@ const post_id = window.location.toString().split("/")[
   
   if (deletePostButton) {
     deletePostButton.addEventListener("click", deletePostFormHandler);
-  }
+  };

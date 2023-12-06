@@ -10,7 +10,7 @@
         <p>{{{content}}}</p>
         <div class="dashboard-buttons">
         <a href="/editpost/{{id}}">Edit</a>
-            <form action="/api/posts/{{id}}" method="POST">
+            <form action="/controllers/api/post-routes.js" method="POST">
             <input type="hidden" name="_method" value="DELETE">
             <button type="submit">Delete</button>
             </form>
@@ -21,7 +21,7 @@
     <p>You haven't created any posts yet.</p>
     {{/if}}
 
-    <a href="/newpost">Create a New Post</a>
+    <a href="/views/new-post.handlebars">Create a New Post</a>
 </section>
 {{else}}
     <p>You must be logged in to view your dashboard.</p>

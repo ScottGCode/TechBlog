@@ -1,4 +1,4 @@
-// Logout function to send request to log out the user
+
 const logout = async () => {
     const response = await fetch('/api/users/logout', {
       method: 'POST',

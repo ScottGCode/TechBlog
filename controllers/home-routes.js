@@ -20,7 +20,7 @@ router.get("/", async (req, res) => {
         const posts = postData.map((post) => post.get({ plain: true }));
         // Log the posts data to the console
         console.log("Main Route - posts:", posts);
-        res.render("layouts/main.handlebars", {
+        res.render("home", {
             posts,
             logged_in: req.session.logged_in,
         });

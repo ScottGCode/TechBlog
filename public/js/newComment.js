@@ -1,4 +1,3 @@
-// Create new comment public/js/new-comment.js
 const newCommentFormHandler = async (event) => {
     event.preventDefault();
   

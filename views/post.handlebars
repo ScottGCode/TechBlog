@@ -1,6 +1,6 @@
 <article class="blog-post">
     <h2>{{title}}</h2>
-    <p class="post-meta">Posted by {{User.username}} on {{format_date createdAt}}</p>
+    <p class="post-meta">Posted by {{user.username}} on {{format_date createdAt}}</p>
     <div class="post-content">
         {{{content}}}
     </div>
@@ -9,7 +9,7 @@
         <h3>Comments</h3>
         {{#each comments}}
         <div class="comment">
-            <p>{{User.username}}:</p>
+            <p>{{user.username}}:</p>
             <p>{{comment_text}}</p>
         </div>
         {{/each}}

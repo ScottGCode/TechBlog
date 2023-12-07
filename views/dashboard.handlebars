@@ -9,13 +9,10 @@
         <p class="post-meta">Posted on {{format_date createdAt}}</p>
         <p>{{{content}}}</p>
         <div class="dashboard-buttons">
-        <a href="/editpost/{{id}}">Edit</a>
-            <form action="/controllers/api/post-routes.js" method="POST">
-            <input type="hidden" name="_method" value="DELETE">
-            <button type="submit">Delete</button>
-            </form>
+            <a href="/editpost/{{id}}">Edit</a>
+            <button class="delete-post" data-post-id="{{id}}">Delete</button>
         </div>
-        </article>
+    </article>
     {{/each}}
     {{else}}
     <p>You haven't created any posts yet.</p>

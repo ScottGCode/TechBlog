@@ -1,10 +1,10 @@
 {{#each posts}}
 <article class="blog-post">
     <h2>{{title}}</h2>
-    <p class="post-meta">Posted by {{User.username}} on {{format_date createdAt}}</p>
+    <p class="post-meta">Posted by {{user.username}} on {{format_date createdAt}}</p>
     <div class="post-content">
         {{{content}}}
     </div>
-    <a href="/post/{{id}}">Read more</a>
+    <a href="/api/posts/{{id}}">Read more</a>
 </article>
 {{/each}}

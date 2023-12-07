@@ -1,5 +1,5 @@
 const deletePost = async (post_id) => {
-    const response = await fetch(`/api/post-routes/${post_id}`, {
+    const response = await fetch(`/api/posts/${post_id}`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
     });

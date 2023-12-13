@@ -36,7 +36,8 @@ router.get("/:id", async (req, res) => {
             res.status(404).json({ message: "No post found with that id!" });
             return;
         }
-        res.render("post", postData);
+        const post = postData.get({ plain: true }); // Convert to plain data
+        res.render("post", post);
     } catch (err) {
         console.error("Error fetching a single post:", err);
         res.status(500).json(err);
@@ -75,6 +76,25 @@ router.put("/:id", withAuth, async (req, res) => {
     console.error("Error rendering edit post page:", err);
     res.status(500).json(err);
 }
+});
+
+//Edit Post Route
+router.get("/posts/:id", async (req, res) => {
+    try {
+        const postData = await Post.findByPk(req.params.id, {
+            include: [
+                { model: User, attributes: ["username"] },
+                { model: Comment, include: [{ model: User, attributes: ["username"] }] },
+            ],
+        });
+        const post = postData.get({ plain: true });
+        res.render("editpost", {
+            ...post,
+            logged_in: req.session.logged_in,
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
 });
 
 // Delete a post with authenticated user

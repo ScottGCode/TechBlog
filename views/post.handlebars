@@ -9,8 +9,8 @@
         <h3>Comments</h3>
         {{#each comments}}
         <div class="comment">
-            <p>{{user.username}}:</p>
-            <p>{{comment_text}}</p>
+            <p>{{this.user.username}}:</p>
+            <p>{{this.comment_text}}</p>
         </div>
         {{/each}}
 

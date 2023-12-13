@@ -1,15 +1,15 @@
 {{#if logged_in}}
 <section class="user-dashboard">
-    <h2>Your Dashboard {{user.username}} !</h2>
+    <h2>Your Dashboard {{User}} !</h2>
 
     {{#if posts.length}}
     {{#each posts}}
     <article class="dashboard-post">
         <h3>{{title}}</h3>
-        <p class="post-meta">Posted on {{format_date createdAt}}</p>
+         <p class="post-meta">Posted on {{#if createdAt}}{{format_date createdAt}}{{else}}Invalid Date{{/if}}</p>
         <p>{{{content}}}</p>
         <div class="dashboard-buttons">
-            <a href="/editpost/{{id}}">Edit</a>
+            <a href="/api/posts/{{id}}">Edit</a>
             <button class="delete-post" data-post-id="{{id}}">Delete</button>
         </div>
     </article>
